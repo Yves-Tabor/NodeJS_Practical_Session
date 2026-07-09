@@ -9,6 +9,10 @@ const rates: Record<string, number> = {
     gbp: 1650
 };
 
+app.get("/convert", (req, res) => {
+    //conversion goes here
+})
+
 app.listen(port, () => {
     console.log("Server is running on http://localhost:", port);
 });
