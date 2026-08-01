@@ -10,6 +10,7 @@ const rates: Record<string, number> = {
 };
 
 app.get("/convert", (req, res) => {
+    const { amount, currency } = req.query;
 
 })
 
