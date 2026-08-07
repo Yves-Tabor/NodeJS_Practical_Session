@@ -37,15 +37,7 @@ app.get("/convert", (req, res) => {
     //Step 4: Performing conversion
     const convertedAmount = validAmount * rate;
 
-    //Step 5: Sending Response
-    return res.status(200).json({
-        input: {
-            amount: validAmount,
-            currency: currency.toLowerCase(),
-        },
-        convertedAmount,
-        unit: "RWF",
-    })
+
 
 })
 
