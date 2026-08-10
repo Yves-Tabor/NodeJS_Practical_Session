@@ -20,7 +20,7 @@ app.get("/convert", (req, res) => {
     }
 
     const validAmount = Number(amount);
-    if (!Number.isFinite(validAmount) && validAmount > 0) {
+    if (!Number.isFinite(validAmount) && validAmount <= 0) {
         return res.status(400).json({
             error: "Provide a valid number greater than 0",
         })
