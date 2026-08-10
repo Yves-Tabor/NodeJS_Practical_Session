@@ -12,7 +12,7 @@ const rates: Record<string, number> = {
 
 app.get("/convert", (req, res) => {
     const { amount, currency } = req.query;
-   
+
     if (amount === undefined || currency === undefined) {
         return res.json(400).json({
             error: "Both amount and currency are required",
@@ -33,10 +33,10 @@ app.get("/convert", (req, res) => {
     }
 
     const rate = rates[currency.toLowerCase()];
-    
+
 
     const convertedAmount = validAmount * rate;
-    
+
     return res.status(200).json({
         input: {
             amount: validAmount,
