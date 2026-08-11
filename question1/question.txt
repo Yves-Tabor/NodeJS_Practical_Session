@@ -1,0 +1,17 @@
+1. Build an Express server with a single GET endpoint /convert.
+- Accept two query parameters:
+    - `amount` (numeric)
+    - `currency` (either `"usd"`, `"eur"`, or `"gbp"`)
+- The server should convert the given amount **to Rwandan Francs (RWF)** using predefined conversion rates stored in a JavaScript object.
+- Respond with a JSON object showing the input and the converted value:
+    
+    ```json
+    {
+      "input": { "amount": 10, "currency": "usd" },
+      "convertedAmount": 13000,
+      "unit": "RWF"
+    }
+    
+    ```
+    
+- Handle missing or invalid parameters with a `400` response and descriptive error.
