@@ -1,13 +1,13 @@
-import {Request, Response, NextFunction} from "express";
+import type { Request, Response, NextFunction } from "express";
 
-export function requestLogger (
+export function requestLogger(
     req: Request,
-    res: Response;
+    res: Response,
     next: NextFunction
 ) {
     const start = Date.now();
 
-    res.on("finish", ()=>{
+    res.on("finish", () => {
         const responseTime = Date.now() - start;
         const timestamp = new Date().toISOString();
 
@@ -15,5 +15,4 @@ export function requestLogger (
     });
 
     next();
-    
 }
