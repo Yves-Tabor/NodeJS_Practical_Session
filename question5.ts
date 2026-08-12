@@ -1,4 +1,5 @@
-import express, { Request, Response } from "express";
+import express from "express";
+import type { Request, Response } from "express";
 
 const app = express();
 const port = 3000;
@@ -59,7 +60,7 @@ app.post("/register", (req: Request, res: Response) => {
 
     users.push(newUser);
 
-    const { password, ...userWithoutPassword } = newUser;
+    const { password: _, ...userWithoutPassword } = newUser;
     res.status(201).json(userWithoutPassword)
 })
 
